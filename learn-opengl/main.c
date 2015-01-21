@@ -50,6 +50,16 @@ int main(int argc, char *argv[])
                             PrintKey((int)event.key.keysym.sym, t == SDL_KEYDOWN);
                             break;
                     }
+
+				case SDL_MOUSEBUTTONDOWN:
+				case SDL_MOUSEBUTTONUP:
+					switch (event.button.button)
+					{
+						default:
+							PrintKey((int)event.button.button, event.button.state == SDL_PRESSED);
+							break;
+					}
+
             }
         }
         
